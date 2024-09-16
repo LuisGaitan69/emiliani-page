@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+
+    <body>
+        <!-- Main Navbar -->
+        <nav class="bg-slate-950 border-gray-200 fixed-top">
+            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="img/icon-logo.png" class="object-cover h-16" alt="School Logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Emiliani Somascos</span>
+                </a>
+                <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-default" aria-expanded="false">
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                    </svg>
+                </button>
+                <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                    <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border rounded-lg bg-slate-950 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-slate-950">
+                      <li>
+                        <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-slate-900 md:hover:bg-slate-950 md:border-0 hover:text-blue-700 md:hover:text-blue-700 md:p-0 bg-slate-950 text-white">About</a>
+                      </li>
+                      <li>
+                        <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-slate-900 md:hover:bg-slate-950 md:border-0 hover:text-blue-700 md:hover:text-blue-700 md:p-0 bg-slate-950 text-white">Services</a>
+                      </li>
+                      <li>
+                        <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-slate-900 md:hover:bg-slate-950 md:border-0 hover:text-blue-700 md:hover:text-blue-700 md:p-0 bg-slate-950 text-white">Pricing</a>
+                      </li>
+                      <li>
+                        <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-slate-900 md:hover:bg-slate-950 md:border-0 hover:text-blue-700 md:hover:text-blue-700 md:p-0 bg-slate-950 text-white">Contact</a>
+                      </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Boton para abrir la segunda navbar -->
+            <div class="flex justify-center">
+                <button id="extend-navbar-btn" class="bg-slate-800 hover:bg-slate-600 text-white hover:text-white px-4 py-2 rounded-full">
+                    <svg id="arrow-icon" class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <!-- Icono de flecha hacia abajo (default) -->
+                        <path id="arrow-down" stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                        <!-- Icono de flecha hacia arriba (oculto inicialmente) -->
+                        <path id="arrow-up" class="hidden" stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <script>
+            document.getElementById('extend-navbar-btn').addEventListener('click', function() {
+            // Alternar entre mostrar la flecha hacia arriba y hacia abajo
+            const arrowDown = document.getElementById('arrow-down');
+            const arrowUp = document.getElementById('arrow-up');
+            
+            // Cambiar las clases hidden según el estado
+            arrowDown.classList.toggle('hidden');
+            arrowUp.classList.toggle('hidden');
+        });
+        </script>
+
+        <!-- Second Navbar (initially hidden) -->
+        <nav id="second-navbar" class="bg-slate-800 p-4 hidden fixed-top">
+            <div class="flex justify-center items-center">
+                <div class="w-full md:block md:w-auto" id="navbar-default">
+                    <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border rounded-lg bg-slate-800 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
+                      <li>
+                        <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-slate-600 md:border-0 md:p-0 bg-slate-800 text-white">About</a>
+                      </li>
+                      <li>
+                        <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-slate-600 md:border-0 md:p-0 bg-slate-800 text-white">Services</a>
+                      </li>
+                      <li>
+                        <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-slate-600 md:border-0 md:p-0 bg-slate-800 text-white">Pricing</a>
+                      </li>
+                      <li>
+                        <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-slate-600 md:border-0 md:p-0 bg-slate-800 text-white">Contact</a>
+                      </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <script>
+            // JavaScript to toggle the second navbar
+            document.getElementById('extend-navbar-btn').addEventListener('click', function() {
+                const secondNavbar = document.getElementById('second-navbar');
+                const secondNavbarButton = document.getElementById('extend-navbar-btn');
+                secondNavbar.classList.toggle('hidden');
+            });
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+
+        
+
+        <div id="default-carousel" class="relative w-full" data-carousel="slide">
+            <!-- Carousel wrapper -->
+            <div class="relative h-[20rem] overflow-hidden md:h-[40rem]">
+                <!-- Item 1 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="img/carousel/ban1.jpg" class="absolute block w-full h-full object-cover" alt="...">
+                </div>
+                <!-- Item 2 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="img/carousel/ban2.jpg" class="absolute block w-full h-full object-cover" alt="...">
+                </div>
+                <!-- Item 3 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="img/carousel/ban3.jpg" class="absolute block w-full h-full object-cover" alt="...">
+                </div>
+            </div>
+            <!-- Slider indicators -->
+            <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+                <button type="button" class="w-3 h-3 rounded-full bg-white opacity-50" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                <button type="button" class="w-3 h-3 rounded-full bg-white opacity-50" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                <button type="button" class="w-3 h-3 rounded-full bg-white opacity-50" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+            </div>
+            <!-- Slider controls -->
+            <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white group-hover:bg-white group-focus:ring-4 group-focus:ring-white">
+                    <svg class="w-4 h-4 text-black rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                    </svg>
+                    <span class="sr-only">Previous</span>
+                </span>
+            </button>
+
+            <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white group-hover:bg-white group-focus:ring-4 group-focus:ring-white">
+                    <svg class="w-4 h-4 text-black rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                    </svg>
+                    <span class="sr-only">Next</span>
+                </span>
+            </button>
+        </div>
+    </body>
+
+    <body>
+        <!-- Contenedor principal centrado -->
+        <div class="flex flex-col items-center justify-center py-10 space-y-10">
+            <!-- Sección con imagen a la izquierda y texto a la derecha -->
+            <div class="block flex flex-col md:flex-row items-center justify-between w-full max-w-5xl rounded-xl py-15" style="box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);" >
+                <!-- Imagen a la izquierda -->
+                <div class="w-full md:w-1/3 p-4">
+                    <img src="img/main/pic1.JPEG" alt="Imagen descriptiva" class="w-full max-w-xs h-auto object-cover rounded-lg">
+                </div>
+
+                <!-- Bloque de texto a la derecha -->
+                <div class="w-full md:w-2/3 p-4 px-10">
+                    <h1 class="text-3xl font-bold mb-4 text-blue-950">Primaria</h2>
+                    <hr class="w-full h-1 mx-auto my-4 bg-cyan-500 border-0 rounded">
+                    <p class="text-lg text-gray-600">
+                        Descubre el emocionante mundo de la educación primaria en el Instituto Emiliani Somascos, sede San Pedrito, zona 05 Ciudad de Guatemala. Ofrecemos un ambiente educativo enriquecedor y estimulante para los alumnos en su fase inicial de aprendizaje. Nuestro equipo docente altamente capacitado está comprometido en brindar una educación de calidad que desarrolle habilidades clave y siente las bases para el éxito futuro de cada estudiante.
+                    </p>
+                </div>
+            </div>
+
+            <div class="block flex flex-col md:flex-row items-center justify-between w-full max-w-5xl rounded-xl py-15" style="box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);" >
+                <!-- Imagen a la izquierda -->
+                <div class="w-full md:w-2/3 p-4 px-10">
+                    <h1 class="text-3xl font-bold mb-4 text-blue-950">Ciclo Básico</h2>
+                    <hr class="w-full h-1 mx-auto my-4 bg-cyan-500 border-0 rounded">
+                    <p class="text-lg text-gray-600">
+                        En el ciclo de Básico, ofrecemos una educación equilibrada en diversas áreas del conocimiento, como Matemáticas, Lenguaje, Ciencias y Estudios Sociales. Nuestro plan de estudios fortalece habilidades de pensamiento crítico, resolución de problemas y comunicación efectiva, asegurando que los estudiantes adquieran un conocimiento sólido. Conocenos en nuestras 3 sedes:
+San Pedrito, zona 05.
+Villa Hermosa, San Miguel Petapa
+Mixco, Sede Central.
+</p>
+                </div>
+
+                <!-- Bloque de texto a la derecha -->
+                <div class="w-full md:w-1/3 p-4">
+                    <img src="img/main/pic2.JPEG" alt="Imagen descriptiva" class="w-full max-w-xs h-auto object-cover rounded-lg">
+                </div>
+            </div>
+
+            <div class="block flex flex-col md:flex-row items-center justify-between w-full max-w-5xl rounded-xl py-15" style="box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);" >
+                <!-- Imagen a la izquierda -->
+                <div class="w-full md:w-1/3 p-4">
+                    <img src="img/main/pic3.JPEG" alt="Imagen descriptiva" class="w-full max-w-xs h-auto object-cover rounded-lg">
+                </div>
+
+                <!-- Bloque de texto a la derecha -->
+                <div class="w-full md:w-2/3 p-4 px-10">
+                    <h1 class="text-3xl font-bold mb-4 text-blue-950">Carreras Técnicas</h2>
+                    <hr class="w-full h-1 mx-auto my-4 bg-cyan-500 border-0 rounded">
+                    <p class="text-lg text-gray-600">
+                        ¡Expande tus horizontes y prepárate para una carrera exitosa con nuestras carreras técnicas en el ciclo diversificado! Ofrecemos una educación de calidad, que te prepara para enfrentar los desafíos del mundo laboral, brindándote habilidades prácticas y conocimientos especializados en campos de alta demanda. Conocenos en nuestras 2 sedes:
+                        Villa Hermosa, San Miguel Petapa
+                        Mixco, Sede Central.</p>
+                </div>
+            </div>
+
+            <div class="block flex flex-col md:flex-row items-center justify-between w-full max-w-5xl rounded-xl py-15" style="box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);" >
+                <!-- Imagen a la izquierda -->
+                <div class="w-full md:w-2/3 p-4 px-10">
+                    <h1 class="text-3xl font-bold mb-4 text-blue-950">Ciclo Básico</h2>
+                    <hr class="w-full h-1 mx-auto my-4 bg-cyan-500 border-0 rounded">
+                    <p class="text-lg text-gray-600">
+                        ¡Potencia tus habilidades y avanza en tu educación los fines de semana con nuestros diplomados y certificados técnicos avalados por el Ministerio de Educación! Ofrecemos programas flexibles diseñados para aquellos que tienen compromisos durante la semana, permitiéndote desarrollar tu formación profesional los sábados.
+                        Villa Hermosa, San Miguel Petapa
+                        Mixco, Sede Central.
+                        
+                        </p>
+                </div>
+
+                <!-- Bloque de texto a la derecha -->
+                <div class="w-full md:w-1/3 p-4">
+                    <img src="img/main/pic4.JPEG" alt="Imagen descriptiva" class="w-full max-w-xs h-auto object-cover rounded-lg">
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+</html>
